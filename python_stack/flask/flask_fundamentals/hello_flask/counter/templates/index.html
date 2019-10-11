@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Counter</title>
+	<style>
+        h1{
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+	<h1>Counter</h1>
+    <p>{{counter}} times</p>
+    
+    <form action="/reset" method = "post">
+        <input type="submit" value="reset">
+    </form>
+
+    <form action="/two" method = "post">
+        <input type="submit" value="+2">
+    </form>
+</body>
+</html>

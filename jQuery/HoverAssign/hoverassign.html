@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+        <script type="text/javascript">
+
+        var swap = function () {
+        var $this = $(this);
+        var secondImage = $this.data('alt-src');
+        $this.data('alt-src', $this.attr('src'));
+        $this.attr('src', secondImage);
+            }
+
+            $(function () {
+                $('img.image').hover(swap, swap);
+             });
+        </script>
+        <title>Document</title>
+</head>
+<body>
+        <div class="row1">
+                <img class="image" data-alt-src="suit2.jpg" src="suit1.jpg" width="100" height="100" />
+                <img class="image" data-alt-src="suit2.jpg" src="suit1.jpg" width="100" height="100" />
+                <img class="image" data-alt-src="suit2.jpg" src="suit1.jpg" width="100" height="100" />
+        </div>
+        
+            <div class="row2">
+                <img class="image" data-alt-src="suit2.jpg" src="suit1.jpg" width="100" height="100"/>
+                <img class="image" data-alt-src="suit2.jpg" src="suit1.jpg" width="100" height="100"/>
+                <img class="image" data-alt-src="suit2.jpg" src="suit1.jpg" width="100" height="100"/>
+            </div>
+        
+    
+</body>
+</html>

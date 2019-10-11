@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CheckerBoard</title>
+        <style>
+
+            .cell1{
+                background-color: black;
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+                margin: 2px;
+            }
+
+            .cell2{
+                    background-color: grey;
+                    display: inline-block;
+                    height: 30px;
+                    width: 30px;
+                    margin: 2px;
+            }
+
+        </style>
+</head>
+<body>
+    
+        <table>
+
+        {% for i in range(0,x): %} 
+
+            <tr>
+
+                {% for j in range(0,y):  %}
+                    <td class="cell{{(i+j)%2+1}}"></td> 
+                {% endfor %}
+
+            </tr>
+
+        {% endfor %}
+        
+        </table> 
+      
+</body>
+</html>

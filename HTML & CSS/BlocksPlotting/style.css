@@ -1,0 +1,66 @@
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   }
+
+.col{
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.row{
+   
+    border: 3px solid blue;
+  
+}
+
+
+   .header{
+    margin: 20px;
+    min-height: 150px;
+    background-color: green;
+    position: relative;
+    top: 25px;
+   }
+   .navigation{
+    height: 300px;
+    width: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    background-color: blue;
+    display: inline-block;
+
+    position: relative;
+    top: 25px;
+    vertical-align: top;
+   }
+   .main_content{
+    min-height: 400px;
+    width: 780px;
+    background-color: red;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 26px;
+    position: relative;
+    top: 25px;
+    vertical-align: top;
+
+   }
+   .subcontents{
+    min-height: 200px;
+    width: 200px;
+    margin: 10px;
+    background-color: yellow;
+    display: inline-block;
+   }
+   .advertisement{
+    min-height: 120px;
+    width: 650px;
+    margin-left: 10px;
+    background-color: purple;
+   }
+
+   

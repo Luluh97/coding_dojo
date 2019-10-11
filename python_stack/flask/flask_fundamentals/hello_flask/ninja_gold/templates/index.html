@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ninja Money</title>
+    <style>
+        .container{
+            width: 1000px;
+            height: 1000px;
+        }
+
+        #box{
+            width: 150px;
+            height: 150px;
+            outline: 2px solid black;
+            display: inline-block;
+            margin: 10px;
+            padding-left: 40px;
+        }
+
+        #box h5{
+            padding-left: 35px;
+        }
+
+        #activity{
+            outline: 2px solid black;
+            width: 850px;
+            height: 250px;
+            overflow-y: scroll;
+        }
+
+        .green{
+            color: green;
+        }
+
+        .red{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>Your Gold</p>
+    <input type="number" value="{{gold}}">
+    
+    <div class="container">
+        <div id="box">
+            <form action="/process_money" method="post">
+                <h5>Farm</h5>
+                <p>(earns 10-20 golds)</p>
+                <input type="hidden" name="place" value="farm">
+                <input type="submit" value="Find Golds!">
+                
+            </form>
+        </div>
+        
+        <div id="box">
+            <form action="/process_money" method="post">
+                <h5>Cave</h5>
+                <p>(earns 5-10 golds)</p>
+                <input type="hidden" name="place" value="cave">
+                <input type="submit" value="Find Golds!">
+                
+            </form>
+        </div>
+        
+        <div id="box">
+            <form action="/process_money" method="post">
+                <h5>House</h5>
+                <p>(earns 2-5 golds)</p>
+                <input type="hidden" name="place" value="house">
+                <input type="submit" value="Find Golds!">
+                
+                </form>
+        </div>
+
+        <div id="box">
+            <form action="/process_money" method="post">
+                <h5>Casino</h5>
+                <p>(earns 0-50 golds)</p>
+                <input type="hidden" name="place" value="casino">
+                <input type="submit" value="Find Golds!">
+                
+            </form>
+        </div>
+        <p>Activities</p>
+        <div id='activity'>
+            {% for x in session ['activity'] %}
+            {% if "Lost" in x %}
+                  <p class="red">{{x}}</p>
+                {% endif %}
+                {% if "Earned" in x %}
+                <p class="green">{{x}}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <form action="/reset" method = "post">
+            <input type="submit" value="reset">
+        </form>
+    </div>
+</body>
+</html>

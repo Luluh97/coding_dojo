@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read (One)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+      #links{
+          position: relative;
+          left: 590px;
+      }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div class="card text-center">
+            <div class="card-body">
+                <h3 class="card-title">Title: {{this_show.title}}</h3>
+                <h4 class="card-text">Network: {{this_show.network}}</h4>
+                <h4 class="card-text">Release Date: {{this_show.release_date}}</h4>
+                <h4 class="card-text">Description: {{this_show.description}}</h4>
+            </div>
+            <div class="card-footer text-muted">
+                <h5>Last Updated: {{this_show.updated_at}}</h5>
+            </div>
+        </div>
+        <div id="links">
+            <a href="{% url 'show' show_edit_id=this_show.id %}">Edit</a> |
+            <a href="{% url 'show2' show_delete_id=this_show.id%}">Delete</a>
+        </div>
+    </form>
+</body>
+</html>
+
+        
+       
+
+      
+      

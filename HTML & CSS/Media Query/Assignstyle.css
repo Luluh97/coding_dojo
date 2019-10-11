@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+span{
+    font-weight: bold;
+}
+
+h3{
+    font-size: 25px;
+}
+.col{
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.row{
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid goldenrod;    
+  
+}
+
+.row1{
+    background-color: grey;
+}
+
+.row2{
+    background-color: lightgray;
+}
+
+.row3{
+    background-color: lightgoldenrodyellow;
+}
+
+
+
+@media only screen and (max-width: 480px){
+    .sm-4{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-widht: 481px){
+    med-2{
+        width:50%;
+    }
+}
+
+@media only screen and(min-width:1240px){
+    .lg1{
+        width: 25%;
+    }
+
+}

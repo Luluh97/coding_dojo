@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read (All)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <form method="post">
+        <table class="table table-striped">
+            <h1>All Shows</h1>
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Network</th>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for show in list%}
+                  <tr>
+                    <td>
+                      {{show.id}}
+                    </td>
+                    <td>
+                      {{show.title}}
+                    </td>
+                    <td>
+                      {{show.network}}
+                    </td>
+                    <td>
+                      {{show.release_date}}
+                    </td>
+                    <td>
+                      {{show.description}}
+                    </td>
+                    <td>
+                        <a href="{% url 'show1' added_show_id=show.id %}">Show</a> | 
+                        <a href="{% url 'show' show_edit_id=show.id %}">Edit</a> |
+                        <a href="{% url 'show2' show_delete_id=show.id%}">Delete</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+        </table>
+  </form>
+        <form action="/shows/new">
+            <input type="submit" class="btn btn-link" value="Add a New show"/>
+        </form>
+</body>
+</html>

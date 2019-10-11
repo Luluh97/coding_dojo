@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Word Generator</title>
+    <style>
+        #a{
+            position: relative;
+            left: 500px;
+            width: 200px;
+            padding: 3px;
+            height: 50px;
+            outline: 2px solid black;
+        }
+        #a p{
+            text-align: center;
+        }
+        #b{
+           
+            width: 450px;
+            height: 100px;
+            outline: 2px solid black;
+            position: relative;
+            left: 350px;
+            margin-top: 10px;
+            padding: 10px;
+            padding-left: 20px;
+        }
+
+        #button{
+            position: relative;
+            left: 550px;
+            margin-top: 10px;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <div id="a">
+            <p>Random Word ( attempt # {{ request.session.counter }} )</p>
+        </div>
+        <div id="b">
+            <h1>{{rand_s}}</h1>
+        </div>
+        <input id = "submit" type="submit" value="Generate">
+    </form>
+</body>
+</html>

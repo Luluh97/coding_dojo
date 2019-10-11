@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        form{
+            display: inline-block;
+        }
+        .header h5, form{
+                display: inline-block;
+            }
+    </style>
+    <title>Read (All)</title>
+</head>
+<body>
+        <div class="header">
+                <h5>All Users </h5>
+                <form method="post" action="/users">
+                        <input type="submit" class="btn btn-link" value="Home"/>
+                </form>
+            </div>
+    <table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+         <tr>
+            <td>{{user.user_id}}</td>
+            <td>{{user.first_name + user.last_name}}</td>
+            <td >{{user.email}}</td>
+            <td>{{users.created_at}}</td>
+            <td> 
+                <form method="post" action="/users">
+                    <input type="submit" class="btn btn-link" value="Show"/>
+                </form>  
+                | 
+                <form method = "post" action="/users">
+                    <input type="submit" class="btn btn-link" value="Edit"/>
+                </form> 
+                | 
+                <form method = "post" action="/users">
+                    <input type="submit" class="btn btn-link" value="Delete"/>
+                </form>
+            </td> 
+          </tr>
+        {%  endfor %}
+    </tbody>
+</table>
+<form action="/users/new">
+    <input type="submit" class="btn btn-link" value="Add New User"/>
+</form>
+</body>
+</html>

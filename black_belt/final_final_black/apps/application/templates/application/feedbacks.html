@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>profile</title>
+    {% load static %}
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{% static 'application/css/main.css' %}">
+</head>
+
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+
+        <!-- Logo -->
+        <h1><a href="/" id="logo"><img src="{% static 'application/img/lastlogo.png' %}" style="width: 500px; height:100px; " alt="logo"></a></h1>
+
+
+    </div>
+
+    <section class="wrapper style1">
+        <div class="container">
+            <div id="content">
+
+                <!-- Content -->
+
+                <article>
+                    <header>
+                        <h2>{{msg}}</h2>
+                            <a href="/feedback_table">Back</a>
+
+                    </header>
+
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+
+
+        <!-- Icons -->
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+        </ul>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; All rights reserved</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

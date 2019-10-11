@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Home</title>
+    {% load static %}
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{% static 'application/css/main.css' %}">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+</head>
+
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+
+        <!-- Logo -->
+        <h1><a href="/" id="logo"><img src="{% static 'application/img/lastlogo.png' %}" style="width: 500px; height:100px; " alt="logo"></a></h1>
+<!--        <img src="{% static 'application/images/logo.png' %}">-->
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="/">Home</a></li>
+                <li><a href="/lawyers">Our lawyers</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Banner -->
+    <section id="banner">
+        <header>
+            <h2>Welcome to Lawyers Gate</h2>
+        </header>
+    </section>
+
+
+    <!-- Gigantic Heading -->
+    <section class="wrapper style2">
+        <div class="container">
+            <header class="major">
+                <h2>For Lawyers</h2>
+                <p>This website is designed to allow you as a lawyer provide additional information
+                    about yourself regarding your experience and field of work to reach out to more clients as well as
+                    explaning your past accomplishments, educational degrees and certifications.
+                </p>
+                <h2>For Guests</h2>
+                <p>This website is designed to help clients know their lawyers better. You will have access to the
+                    available
+                    licensed lawyers in Saudi Arabia and their information. The website will help you choose
+                    the suitable lawyer for your case and get their contact info.
+                </p>
+            </header>
+        </div>
+    </section>
+
+
+
+
+    <section id="cta" class="wrapper style3">
+        <div class="container">
+            <header>
+                <h2>Do u want to join our lawyers? have a license?</h2>
+                <a href="/check_license" class="button">Register now</a> <span>  or </span>
+                <a href="/log_in" class="button">Log in</a>
+            </header>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+
+        <!-- Icons -->
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+        </ul>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; All rights reserved</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

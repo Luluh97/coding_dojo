@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Lawyers</title>
+    {% load static %}
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="{% static 'application/css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body class="is-preload">
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <div id="header">
+
+        <!-- Logo -->
+        <h1><a href="/" id="logo"><img src="{% static 'application/img/lastlogo.png' %}" style="width: 500px; height:100px; margin-bottom: -50px;" alt="logo"></a></h1>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="current"><a href="/lawyers">Our lawyers</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+    <!-- Gigantic Heading -->
+    <section class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <table class="table table-responsive-sm table-hover table-outline mb-0">
+                    <thead class="thead-light">
+                    <tr>
+                        </th>
+                        <th>Username</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in all_users %}
+                    <tr>
+                        <td>
+                            <div>{{user.username}}</div>
+                        </td>
+                        <td class="text-center">
+                            <a href="/{{user.id}}/show_lawyer_profile_g"> Show Profile </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </header>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <div id="footer">
+
+
+        <!-- Icons -->
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+        </ul>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; All rights reserved</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="{% static 'usres_app/js/jquery.min.js' %}"></script>
+<script src="{% static 'usres_app/js/dropotron.min.js' %}"></script>
+<script src="{% static 'usres_app/js/browser.min.js' %}"></script>
+<script src="{% static 'usres_app/js/breakpoints.min.js' %}"></script>
+<script src="{% static 'usres_app/js/util.js' %}"></script>
+<script src="{% static 'usres_app/js/main.js' %}"></script>
+
+</body>
+</html>

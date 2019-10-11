@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Functions</title>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+                                        $('.class button').click(function() { 
+                                                $('.class p').addClass('red');
+                                             });
+                                             
+                                        $('.toggle button').click(function() { 
+                                                $('.header p').addClass('red');
+                                             });
+
+                                    });
+    </script>
+    <style>
+       
+         p{
+            display: inline;
+        }
+
+        .red
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <img src=""
+    <div class="class">
+            <h1>Add Class</h1>
+            <p>Click  button to add class 'red' to this paragraph</p>
+            <button>AddClass</button>
+    </div>
+
+    <div class="toggle">
+            <h1>Slidetoggle</h1>
+            <p>Click button to Slidetoggle a hidden image</p>
+            <button>Slidetoggle</button>
+    </div>
+
+    <div class="append">
+            <h1>Append</h1>
+            <p>Click button to append a new paragraph</p>
+            <button>Append</button>
+    </div>
+    
+</body>
+</html>

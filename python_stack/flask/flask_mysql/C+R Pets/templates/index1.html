@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h1{
+            position: relative;
+            left: 500px;
+        }
+    </style>
+    <title>C+R Pets</title>
+</head>
+<body>
+    <h1>All the Pets!</h1>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Bruce</td>
+            <td>dog</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Fitwilliam</td>
+            <td>@cat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Pete</td>
+            <td>dragon</td>
+          </tr>
+          <tr>
+                <td>{{pets.pet_id}}</td>
+                <td>{{pets.name}}</td>
+                <td>{{pets.type}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+          <h3>Add a Pet!</h3>
+      <form method="post" action="/add_pet">
+        <label>Name</label>
+        <input id="name" name="name" type="text"/><br/>
+        <label>Type:</label>
+        <input id="type" name="type" type="text"/><br/>
+        <input type="submit" value="add">
+      </form>
+    </div>
+</body>
+</html>

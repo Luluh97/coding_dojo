@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Amadon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #header{
+            position: relative;
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id ="header" class="display-4">Amadon Store!</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for product in all_products %}
+            <tr>
+                <form action="/buy" method="post">
+                    {% csrf_token %}
+                    <td>{{product.description}}</td>
+                    <td><input type="hidden" name="id" value="{{product.id}}">{{product.price}}</td>
+                    <td><select class="btn btn-secondary dropdown-toggle" name="quantity">
+                        <option value="1">1</option>              
+                        <option value="2">2</option>              
+                        <option value="3">3</option>              
+                    </select></td>
+                    <td><input class="btn btn-secondary active" type="submit" value="Buy!"></td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</body>
+</html>
+

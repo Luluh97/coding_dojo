@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+                    <script type="text/javascript">
+                     
+                       $(document).ready(function(){
+
+                        $.get("https://randomuser.me/api/", function(data) {
+                            var image = data.results[0].picture.medium;
+                       
+                            $('#image').css("background-image", "url('image')");
+                        });
+                         , "json");
+                        $('button').click(function(){ 
+                            var text1= $('#text1').val();
+                            var text2=$('#text2').val();
+                            var desc= $('#desc').val();
+
+                            $("#des ul").append('<li>'+text1+" "+text2+'<br>Click for description!</li>');
+                            
+                            $(document).on('click', 'li', function(){
+                                $(this).html(desc);
+                                $('#image').val(image);
+                                
+                                });  
+                           });
+                        });
+                   </script>
+            <style>
+            ul{
+                list-style-type: none;
+            }
+            </style>
+    
+        </head>
+<body>
+    <div>
+      
+       <label> First name : </label>
+       <br>
+       <input type="textarea" id="text1">
+       <br>
+       <label> last name : </label>
+       <br>
+       <input type="textarea" id="text2">
+       <br>
+       <label> description : </label>
+       <br>
+       <input type="textarea" id="desc">
+       <br>
+       <br>
+        <button> AddUser </button>
+        
+        <div id="des">
+            <div id="image"></div>
+            <ul> 
+            </ul>
+        </div>
+      
+
+
+    </div>
+</body>
+</html>

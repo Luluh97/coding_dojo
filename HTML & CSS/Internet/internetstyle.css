@@ -1,0 +1,163 @@
+#header{
+    display: inline;
+    position: absolute;
+    font-size: 40px;
+    color: rgb(71, 70, 70);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+    margin-left: 2px;
+    line-height: 15px;
+}
+h3{
+    color:  rgb(0, 100, 162);
+}
+h2{
+    margin-top: -230px;
+    font-size: 15px;    
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    vertical-align: top;
+
+}
+span{
+    color:  rgb(0, 100, 162);
+    font-size: 15px;
+    
+}
+
+.title{
+    color: rgb(0, 100, 162);
+    font-size: 40px;
+}
+img{
+    margin-top: 20px;
+    display: inline;
+}
+
+
+ .font{
+     margin-top: 20px;
+     margin-left: 1120px;
+     color: lightslategray;
+     font-size:10px;
+     position: absolute;
+     left: 20px;
+     display: inline-block;
+     
+}
+#bar{
+    background-color: rgb(0, 100, 162);
+    background-image: linear-gradient( rgb(0, 100, 162), rgb(89, 134, 166), rgb(0, 100, 162));
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -35px; 
+    padding-top: 25px;
+    padding-left: 50px;
+    width: 1207px; 
+    height: 35px;
+    font-size: 25px;
+
+}
+
+#phone{
+    display: inline-block;
+    position: relative;
+    left: 1100px;;
+}
+
+#line1{
+background-color: grey;
+width: 600px;
+height: 1px;
+margin-top: 15px;
+margin-left: 655px;
+}
+
+#line2{
+    background-color: grey;
+    width: 200px;
+    height: 1px;
+    margin-top: 15px;
+    margin-left: 5px;
+
+    }
+
+.aqua{
+    color: rgb(32, 151, 206);
+}
+.button1{
+    border-radius: 15px;
+    color: aliceblue;
+    background-color: rgb(37, 112, 225);
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 15px;
+}
+.button2{
+    border-radius: 15px;
+    color: aliceblue;
+    background-color: orange;
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 15px;;
+}
+
+#body1{
+margin-left: 300px;
+margin-top: 20px;
+vertical-align: top;
+}
+
+#body2{
+    margin-left: 300px;
+    margin-top:-140px;
+    vertical-align: top;
+    }
+
+.ad{
+    color: white;
+    font-size: 20px;
+    margin-top: -250px;
+    margin-left: 20px;
+    position: absolute;
+    text-align: center;
+}
+
+#model{
+    width: 200px;
+    height: 100px;
+    margin-left: 400px;
+    margin-top: 30px;
+    position: absolute;
+}
+#ninjaman{
+    position: absolute;
+    width:70px;
+    height: 90px;
+    margin-left: -130px; 
+    margin-top: 150px;
+}
+.button3{
+    border-radius: 10px;
+    color: aliceblue;
+    margin-top: -50px;
+    margin-left: 30px;
+    background-color: aqua;
+    width: 150px;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 10px;
+    position: absolute;
+}
+
+#box{
+    border:5px solid rgb(73, 132, 195);
+    width: 700px;
+    height: 200px;
+    margin-left: 300px;
+}

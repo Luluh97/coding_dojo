@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <form method="post" action="/users">
+        Name: <input type="text" name="name">
+        Age: <input type="number" name='age'>
+        <button type="submit" value="submit">submit</button>
+    </form>
+    <!-- tip to easily see objects printed in full instead of [object Object] -->
+
+<!-- based on the structure of your messages, determine how to display them -->
+<% if(messages.registration) { %>
+     <% for (var x of messages.registration) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %>
+</body>
+</html>

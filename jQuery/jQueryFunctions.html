@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Functions</title>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+                                        $('h3').toggle(3000)
+                                        
+                                        $('.class button').click(function(){ 
+                                                $('.class p').addClass('red');
+                                                $('img').hide();
+                                                $('.content h5').hide();
+                                             });
+                                             
+                                        $('.toggle button').click(function() { 
+                                                $('h6').slideToggle();
+                                                $('.content h5').slideDown()
+                                                
+                                             });
+
+                                        $('.append button').click(function() { 
+                                                $('.append p').append(' A NEW PARAGRAPH');
+                                                $('img').show();
+                                             });
+
+                                        $('.content button').click(function(){
+                                            $('.content h5').slideUp();
+                                            $('.class h1').before('before')
+                                            $('.class h1').after('after')
+                                        });
+
+                                        $('.content p').slideToggle(10000);
+                                        $('.content img').fadeIn(1000);
+                                        $('.content img').fadeOut(10000);
+                                        
+                                        $('.footer button').click(function(){
+                                            $('.footer h1').append(' Appended')
+                                            $('h2').html('<p>HTML added</p>')
+                                            $('.footer h4').text('text')
+                                    });
+
+                                    
+                                });
+    </script>
+    <style>
+       
+         p{
+            display: inline;
+        }
+
+        .red
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Toggle</h3>
+    <img src="jquery-logo-blue.png" alt="jQuery logo">
+    <h6>WELCOME</h6>
+    <div class="class">
+            <h1>Add Class</h1>
+            <p>Click  button to add class 'red' to this paragraph</p>
+            <button>AddClass</button>
+    </div>
+
+    <div class="toggle">
+            <h1>Slidetoggle</h1>
+            <p>Click button to Slidetoggle a hidden image</p>
+            <button>Slidetoggle</button>
+    </div>
+
+    <div class="append">
+            <h1>Append</h1>
+            <p>Click button to append a new paragraph</p>
+            <button>Append</button>
+    </div>
+   <div class="content">
+       <button>Click to Slide Up</button>
+       <img src="Lorem-Ipsum-alternatives" alt="image"> 
+      <h4>What is Lorem Ipsum?</h4>
+      <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p> 
+      <h5>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h5>
+   </div>
+   <div class="footer">
+       <h1>Heading1</h1>
+       <h2>Heading2</h2>
+       <h4>Heading4</h4>
+       <h5>Heading5</h5>
+       <h6>Heading6</h6>
+       <button>CLICK</button>
+   </div>
+   
+</body>
+</html>

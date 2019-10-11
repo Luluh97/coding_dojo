@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+    <script>
+        var swap = function () {
+        var $this = $(this);
+        var secondImage = $this.data('alt-src');
+        $this.data('alt-src', $this.attr('src'));
+        $this.attr('src', secondImage);
+            }
+
+            $(function () {
+                $('img.image').click(swap);
+             });
+    </script>
+    <title>Document</title>
+   
+</head>
+<body>
+        <img class="image" src='ninja0.png' data-alt-src='cat0.png'/><br>
+        <img class="image" src='ninja1.png' data-alt-src='cat1.png'/><br>
+        <img class="image" src='ninja2.png' data-alt-src='cat2.png'/><br>
+        <img class="image" src='ninja3.png' data-alt-src='cat3.png'/><br>
+        <img class="image" src='ninja4.png' data-alt-src='cat4.png'/>
+</body>
+</html>

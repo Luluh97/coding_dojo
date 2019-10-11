@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books & Authors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Book Info</div>
+                <div class="card-body">
+                  <h5 class="card-title">{{display.title}}</h5>
+                  <p class="card-text">ID : {{display.id}}</p>
+                  <p class="card-text">Description: {{display.desc}}</p>
+                  <p class="card-text">Authors:</p>
+                            {%for x in sp%}
+                                <h4> {{x.first_name}} </h4>
+                            {%endfor%}
+                 <form action="{% url 'show3' id=display.id %}" method="post">
+                         {% csrf_token %}
+                         <select name="authors_list">
+                             {%for a in all_authors%}
+                             <option value={{a.id}}> {{a.first_name}} </option>
+                             {%endfor%}
+                         </select>
+                         <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+                </div>
+            </div>
+</body>
+</html>
