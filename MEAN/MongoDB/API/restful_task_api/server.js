@@ -39,8 +39,8 @@ app.get('/:id/', function (req, res) {
     .catch(err => res.json(err));
 });
 
-app.post('/new', function (req, res) {
-    var task = new Task({ title: req.body.title, description: req.body.description, completed: req.body.completed });
+app.get('/new/:title/:description/:completed', function (req, res) {
+    var task = new Task({ title: req.params.title, description: req.params.description, completed: req.params.completed });
     task.save(function (errorsNewMessage) {
         if (errorsNewMessage) {
             res.json(err);
@@ -70,7 +70,7 @@ app.put('/update/:id/', function (req, res) {
 
 
 app.delete('/remove/:id/', function (req, res) {
-    Task.findOneAndRemove({id : req.params._id})
+    Task.findOneAndDelete({id : req.params._id})
     .then(data => {
         console.log('task deleted:')
         res.json({data: data})
