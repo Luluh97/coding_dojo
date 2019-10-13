@@ -3,9 +3,20 @@ const app = express();
 const server = app.listen(8000);
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+const session = require('express-session');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(express.static( __dirname + '/public/dist/public' ));
+app.use(session({
+    secret: 'keyboardkitteh',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+  }))
+
+  
 mongoose.Promise = global.Promise;
 
 
@@ -14,69 +25,6 @@ useUnifiedTopology: true,
 useNewUrlParser: true,
 });
 
-const   TaskSchema = new mongoose.Schema({
-    title: {type: String},
-    description: {type: String, default:''},
-    completed: {type: Boolean, default:true}},
-    {timestamps: true});
-
-   const Task = mongoose.model('Task', TaskSchema);
-
-   app.use(express.static( __dirname + '/public/dist/public' ));
-
-app.get('/', (req, res) => {
-    Task.find()
-        .then(tasks => res.json({tasks:tasks}))
-        .catch(err => res.json(err));
-}) 
-
-app.get('/:id/', function (req, res) {
-    let id = req.params.id
-    Task.find({_id : id})
-    .then(data => {
-            res.json({data: data});
-        })
-    .catch(err => res.json(err));
-});
-
-app.post('/new', function (req, res) {
-    var task = new Task({ title: req.body.title, description: req.body.description, completed: req.body.completed });
-    task.save(function (errorsNewMessage) {
-        if (errorsNewMessage) {
-            res.json(err);
-        } else {
-            console.log('task created successfully')
-            res.json({task: task});
-        }
-    });
-});
-
-
-app.put('/update/:id/', function (req, res) {
-    Task.update({_id : req.params.id}, {title: req.body.title,
-        description: req.body.description, completed: req.body.completed
-        })
-            .then(data => {
-                res.json({data: data});
-            })
-            .catch(err => {
-                console.log("We have an error!", err);
-                for (var key in err.errors) {
-                    req.flash('registration', err.errors[key].message);
-                }
-                res.json(err);
-            });
-});
-
-
-app.delete('/remove/:id/', function (req, res) {
-    Task.findOneAndRemove({id : req.params._id})
-    .then(data => {
-        console.log('task deleted:')
-        res.json({data: data})
-    })
-    .catch(err => {
-
-        res.json(err);
-    });
-});
+require('./server/config/mongoose.js');
+require('./server/config/routes.js')(app);
+require('./server/models/task.js') //needed?

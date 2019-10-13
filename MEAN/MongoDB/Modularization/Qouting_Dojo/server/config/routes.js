@@ -1,4 +1,4 @@
-var quotes = require('../controllers/qoutes.js');
+var quotes = require('../controllers/tasks.js');
 
 module.exports = function(app){
         app.get('/', (req, res) => { 
