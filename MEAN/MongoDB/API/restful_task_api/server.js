@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const server = app.listen(8000);
+const server = app.listen(6000);
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,22 +39,22 @@ app.get('/:id/', function (req, res) {
     .catch(err => res.json(err));
 });
 
-app.get('/new/:title/:description/:completed', function (req, res) {
-    var task = new Task({ title: req.params.title, description: req.params.description, completed: req.params.completed });
+app.post('/new', function (req, res) {
+    var task = new Task({ title: req.body.title, description: req.body.description, completed: req.body.completed });
     task.save(function (errorsNewMessage) {
         if (errorsNewMessage) {
             res.json(err);
         } else {
-            console.log('task created successfully')
+            console.log('task created successfully', task)
             res.json({task: task});
         }
     });
 });
 
 
-app.put('/update/:id/', function (req, res) {
-    Task.update({_id : req.params.id}, {title: req.body.title,
-        description: req.body.description, completed: req.body.completed
+app.put('/update/:id/', function (req, res, t, d) {
+    Task.updateOne({_id : req.params.id}, {title: t,
+        description: d
         })
             .then(data => {
                 res.json({data: data});
