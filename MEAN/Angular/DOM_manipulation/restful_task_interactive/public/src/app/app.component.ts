@@ -10,7 +10,7 @@ import { HttpService } from './http.service';
 export class AppComponent implements OnInit{
   title = 'MEAN';
   recievec: any;
-  task: any;
+  selected_task: any;
   a: string;
   b: string;
   c: boolean;
@@ -29,11 +29,11 @@ export class AppComponent implements OnInit{
     })
 }
 
-Show(idx){
-  this.task = this.recievec[idx];
-  this.a = this.task.title
-  this.b = this.task.description
-  this.c = this.task.completed
+taskToShow(idx){
+  this.selected_task = this.recievec[idx];
+  this.a = this.selected_task.title
+  this.b = this.selected_task.description
+  this.c = this.selected_task.completed
   this.green = true;
 }
 
