@@ -70,11 +70,7 @@ getRate(id, idx){
     console.log('recieved rate',this.rate)
     this.cakeToShow(idx)
     this.green = true;
-    this.selected_rate = this.rate[0];
-    console.log(this.selected_rate )
-    this.c = this.selected_rate['stars']
-    console.log(this.c)
-    this.d = this.selected_rate.comment
+ 
   })
   
 }
