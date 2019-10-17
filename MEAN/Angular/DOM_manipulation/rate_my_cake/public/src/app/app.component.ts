@@ -17,11 +17,9 @@ export class AppComponent implements OnInit{
   green =  false;
   id = ""
   selected_cake : any;
-  selected_rate: any;
   a: any;
   b: any;
-  c: any;
-  d: any;
+
 
   constructor(private _httpService: HttpService){}
   
