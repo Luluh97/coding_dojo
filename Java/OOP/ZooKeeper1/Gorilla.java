@@ -1,20 +1,17 @@
 public class Gorilla extends Mammal{
 
-    public int throwSomething(){
+    public void throwSomething(){
         System.out.println("Throwing");
-        energyLevel = energyLevel - 5;
-        return energyLevel;
+        energyLevel =- 5;
     }
 
-    public int eatBananas(){
+    public void eatBananas(){
         System.out.println("Eating Banana");
-        energyLevel = energyLevel + 10;
-        return energyLevel;
+        energyLevel =+ 10;
     }
 
-    public int climb(){
+    public void climb(){
         System.out.println("Climbing");
-        energyLevel = energyLevel - 10;
-        return energyLevel;
+        energyLevel =- 10;
     }
 }
