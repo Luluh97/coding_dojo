@@ -3,13 +3,13 @@ public class Pokemon {
     String name;
     Integer health;
     String type;
-    String names = "";
+    public static String names = "";
     public static int count = 0;
 
     public Pokemon(String name1, Integer health1, String type1){
         count++;
+        names += " "+name;
         setName(name1);
-        names+= " "+name1;
         setHealth(health1);
         setType(type1);
     }
@@ -28,7 +28,7 @@ public class Pokemon {
     }
 
 
-    public String getNames(){
+    public static String getNames(){
         return names;
     }
 

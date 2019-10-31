@@ -1,9 +1,6 @@
 public class Pokedex extends AbstractPokemon {
-    
- String myPokemons = "b";
-
-public void listPokemons(){
-    System.out.println(myPokemons);
-}
-
+    String myPokemons = Pokemon.getNames();
+    public void listPokemons() {
+        System.out.println(myPokemons);
+    }
 }
