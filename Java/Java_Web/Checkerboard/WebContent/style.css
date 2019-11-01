@@ -1,0 +1,15 @@
+ .cell1{
+                background-color: black;
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+                margin: 2px;
+            }
+
+.cell2{
+                    background-color: grey;
+                    display: inline-block;
+                    height: 30px;
+                    width: 30px;
+                    margin: 2px;
+            }
