@@ -1,8 +1,8 @@
 public class Pokemon {
 
-    String name;
-    Integer health;
-    String type;
+    Private String name;
+    Private Integer health;
+    Private String type;
     public static String names = "";
     public static int count = 0;
 
