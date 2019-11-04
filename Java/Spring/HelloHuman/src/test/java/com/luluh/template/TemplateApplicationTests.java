@@ -1,10 +1,10 @@
-package com.luluh.firstproject;
+package com.luluh.template;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FirstprojectApplicationTests {
+class TemplateApplicationTests {
 
 	@Test
 	void contextLoads() {
