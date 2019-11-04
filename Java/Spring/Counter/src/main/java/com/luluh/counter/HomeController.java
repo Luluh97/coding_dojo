@@ -24,10 +24,7 @@ public class HomeController {
 	 }
 	 
 	 @RequestMapping("/counter")
-	 public String counter(HttpSession session){
-	        
-	    
-	       
+	 public String counter(){
 	        
 	        return "counter.jsp";
 	    }
