@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Time</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
   <script type="text/javascript" src="js/time.js"></script>
 </head>
 <body>
