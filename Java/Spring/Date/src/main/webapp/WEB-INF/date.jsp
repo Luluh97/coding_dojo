@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/date.js"></script>
 </head>
 <body>
-	<h1 id="date">	
+	  <h1 id="date">	
 		<c:out value="${date}"/> 
 	</h1>
 </body>
