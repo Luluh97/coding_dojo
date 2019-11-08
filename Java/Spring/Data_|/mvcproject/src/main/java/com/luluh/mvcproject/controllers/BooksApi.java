@@ -29,12 +29,12 @@ public class BooksApi {
         return bookService.createBook(book);
     }
     
-    @RequestMapping(value="/api/books/{id}", method=RequestMethod.PUT)
-    public Book update(@PathVariable("id") Long id, @RequestParam(value="title") String title, @RequestParam(value="description") String desc, @RequestParam(value="language") String lang, @RequestParam(value="numberOfPages")
-    Integer numberOfPages) {
-        Book book = bookService.updateBook(id, title, desc, lang, numberOfPages);
-        return book;
-    }
+//    @RequestMapping(value="/api/books/{id}", method=RequestMethod.PUT)
+//    public Book update(@PathVariable("id") Long id, @RequestParam(value="title") String title, @RequestParam(value="description") String desc, @RequestParam(value="language") String lang, @RequestParam(value="numberOfPages")
+//    Integer numberOfPages) {
+//        Book book = bookService.updateBook(id, title, desc, lang, numberOfPages);
+//        return book;
+//    }
     
     @RequestMapping(value="/api/books/{id}", method=RequestMethod.DELETE)
     public void destroy(@PathVariable("id") Long id) {

@@ -3,6 +3,8 @@ package com.luluh.mvcproject.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Service;
 
 import com.luluh.mvcproject.models.Book;
@@ -26,21 +28,21 @@ public class BookService {
     }
     
     //update a book
-
-	public Book updateBook(Long id, String title, String desc, String lang, Integer numberOfPages) {
-		Optional<Book> optionalBook = bookRepository.findById(id);
-		  if(optionalBook.isPresent()) {
-			  Book optionalBook1 = optionalBook.get();
-			  optionalBook1.setTitle(title);
-			  optionalBook1.setDescription(desc);
-			  optionalBook1.setLanguage(lang);
-			  optionalBook1.setnumberOfPages(numberOfPages);
-			  return bookRepository.save(optionalBook1);   
-	        } else {
-	            return null;
-	        }
-		
-	}
+//
+//	public Book updateBook(Long id, String title, String desc, String lang, Integer numberOfPages) {
+//		Optional<Book> optionalBook = bookRepository.findById(id);
+//		  if(optionalBook.isPresent()) {
+//			  Book optionalBook1 = optionalBook.get();
+//			  optionalBook1.setTitle(title);
+//			  optionalBook1.setDescription(desc);
+//			  optionalBook1.setLanguage(lang);
+//			  optionalBook1.setnumberOfPages(numberOfPages);
+//			  return bookRepository.save(optionalBook1);   
+//	        } else {
+//	            return null;
+//	        }
+//		
+//	}
 
 	public void deleteBook(Long id) {
 		bookRepository.deleteById(id);
@@ -55,5 +57,21 @@ public class BookService {
             return null;
         }
     }
+	public @Valid Book updateBook(@Valid Book book) {
+		Optional<Book> optionalBook = bookRepository.findById(book.getId());
+		System.out.print("id is "+optionalBook);
+		  if(optionalBook.isPresent()) {
+			  Book optionalBook1 = optionalBook.get();
+			  optionalBook1.setTitle(book.getTitle());
+			  optionalBook1.setDescription(book.getDescription());
+			  optionalBook1.setLanguage(book.getLanguage());
+			  optionalBook1.setnumberOfPages(book.getnumberOfPages());
+			  return bookRepository.save(optionalBook1);   
+	        } else {
+	            return null;
+	        }
+	}
+
+	
 
 }
