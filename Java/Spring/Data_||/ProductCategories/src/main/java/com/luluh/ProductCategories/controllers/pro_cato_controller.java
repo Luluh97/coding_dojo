@@ -52,7 +52,7 @@ public class pro_cato_controller {
 			}
 			model.addAttribute("product",p);
 			model.addAttribute("cato" , p.getCategories());
-			List <Category> c =p.getCategories();
+			List<java.util.Locale.Category> c =p.getCategories();
 			List <Category> Allc =c_service.all();
 			for(int i=0; i < c.size(); i++) {
 				if(Allc.contains(c.get(i))) {
