@@ -28,7 +28,5 @@
     <p>
         <form:input name="artist1" path="artist" />
     </p>
-
-  
     <input type="submit" value="Search Artist"/>
 </form:form> 
