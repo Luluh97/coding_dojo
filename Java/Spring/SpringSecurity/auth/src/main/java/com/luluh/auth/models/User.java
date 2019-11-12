@@ -2,6 +2,7 @@ package com.luluh.auth.models;
 
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +15,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
@@ -22,8 +24,13 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
-    private String username;
+    @Size(min=3, message="First name must be greater than 3 characters")
+    private String firstname;
+    @Size(min=3, message="Last name must be greater than 3 characters")
+    private String lastname;
+    @Size(min=5, message="Password must be greater than 5 characters")
     private String password;
+    private String username;
     @Transient
     private String passwordConfirmation;
     @Column(updatable=false)
@@ -39,8 +46,10 @@ public class User {
     public User() {
     }
     
-    public User(Long id, String username, String password, Date createdAt, Date updatedAt) {
+    public User(Long id, String username, String firstname, String lastname, String password, Date createdAt, Date updatedAt) {
     	this.id =id;
+    	this.firstname = firstname;
+    	this.lastname = lastname;
     	this.username = username;
     	this.password = password;
     	this.createdAt = createdAt;
@@ -51,6 +60,18 @@ public class User {
     }
     public void setId(Long id) {
         this.id = id;
+    }
+    public String getFirstname() {
+        return firstname;
+    }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+    public String getLastname() {
+        return lastname;
+    }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
     public String getUsername() {
         return username;
