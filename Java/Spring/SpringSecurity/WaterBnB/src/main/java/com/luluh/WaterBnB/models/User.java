@@ -65,15 +65,15 @@ public class User {
     public User() {
     }
     
-//    public User(Long id, String username, String firstname, String lastname, String password, Date createdAt, Date updatedAt) {
-//    	this.id =id;
-//    	this.firstname = firstname;
-//    	this.lastname = lastname;
-//    	this.username = username;
-//    	this.password = password;
-//    	this.createdAt = createdAt;
-//    	this.updatedAt = updatedAt;
-//    }
+    public User(Long id, String username, String firstname, String lastname, String password, Date createdAt, Date updatedAt) {
+    	this.id =id;
+    	this.firstname = firstname;
+    	this.lastname = lastname;
+    	this.username = username;
+    	this.password = password;
+    	this.createdAt = createdAt;
+    	this.updatedAt = updatedAt;
+    }
     
     public Long getId() {
         return id;
