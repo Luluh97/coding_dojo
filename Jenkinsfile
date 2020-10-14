@@ -1,27 +1,19 @@
 pipeline {
   environment {
-    registry = "luluhalsalamah/docker-test"
-    registryCredential = 'dockerhub'
+    registry = "anishnath/mkdocs"
+    registryCredential = 'docker-creds'
     dockerImage = ''
   }
- agent {
-        docker {
-            image 'ubuntu'
-            args '-u root:sudo -v /var/jenkins_home/workspace/docker-test '
-        }
-    }
-  
+  agent any
   stages {
     stage('Cloning Git') {
       steps {
-        echo 'one'
-        git 'https://github.com/LuluhAdel/coding_dojo.git'
+        git 'https://github.com/anishnath/mkdocs.git'
       }
     }
     stage('Building image') {
       steps{
         script {
-           echo 'two'
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
@@ -29,10 +21,9 @@ pipeline {
 
     stage('Test Mkdocs' ) {
                 agent {
-                docker { image 'luluhalsalamah/docker-test:$BUILD_NUMBER' }
+                docker { image 'anishnath/mkdocs:$BUILD_NUMBER' }
             }
             steps {
-               echo 'three'
                 sh 'mkdocs --version'
             }
         }
