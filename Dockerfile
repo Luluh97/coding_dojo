@@ -9,11 +9,7 @@ LABEL org.label-schema.schema-version="1.0.0" \
     ram-usage="13.2MB to 70MB" \
     cpu-usage="Low"
 
-RUN curl -fsSLO https://get.docker/builds/Linux/x86_64/docker-17.04.0-ce.tgz \
-  && tar xzvf docker-17.04.0-ce.tgz \
-  && mv docker/docker /usr/local/bin \
-  && rm -r docker docker-17.04.0-ce.tgz
-  
+
 RUN apk add --update python3 libcap  && \
 	if [ ! -e /usr/bin/python ]; then ln -sf python3 /usr/bin/python ; fi && \
     \
