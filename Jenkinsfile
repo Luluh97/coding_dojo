@@ -1,25 +1,12 @@
-pipeline {
-  agent any
-  
-  stages {
-    stage("build"){
-      steps{
-      echo 'building the application..'
-      }
-    }
-    
-        stage("test"){
-      steps{
-            echo 'testing the application..'
+node {
 
-      }
-    }
-    
-        stage("deploy"){
-      steps{
-            echo 'deploying the application..'
+    checkout scm
 
-      }
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
+
+        def customImage = docker.build("luluhalsalamah/dockerwebapp")
+
+        /* Push the container to the custom Registry */
+        customImage.push()
     }
-  }
 }
