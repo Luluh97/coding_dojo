@@ -8,12 +8,14 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
+        echo 'one'
         git 'https://github.com/LuluhAdel/coding_dojo.git'
       }
     }
     stage('Building image') {
       steps{
         script {
+           echo 'two'
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
@@ -24,6 +26,7 @@ pipeline {
                 docker { image 'luluhalsalamah/docker-test:$BUILD_NUMBER' }
             }
             steps {
+               echo 'three'
                 sh 'mkdocs --version'
             }
         }
